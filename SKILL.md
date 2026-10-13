@@ -4,7 +4,8 @@ description: >-
   Create or revise scientific figures for smart grids, energy optimisation and
   distribution networks, including editable PowerPoint schematics, electrical
   topologies, optimisation workflows and source-grounded result figures. Use for
-  科研绘图、论文插图、拓扑图、能源优化框架图、热力图 and 可编辑PPT图件 in these domains.
+  科研绘图、论文插图、拓扑图、能源优化框架图、热力图 and 可编辑PPT图件 in these domains,
+  including replacing figure pages in an existing presentation.
   Does not author full slide decks or run new experiments.
 ---
 
@@ -25,6 +26,8 @@ description: >-
 
 开工时用简短中文说明图要回答的问题、必须出现的元素与连接、排除项，以及沿用旧图的哪些结构。来源足够时随即执行。
 
+读图与设计建议请求保持只读，交付提示词时只输出提示词；用户要求绘制、修改或导出时才执行相应构建。新建图使用独立输出，修改模板按指定页面处理，调用 skill 本身不授权发布或改动无关文件。
+
 按当前图型读取 [figure-types.md](references/figure-types.md)，核对节点连接、设备层级、模型变量、物理与市场数据层、控制与信息流、单位或统计口径。旧图与当前材料冲突时采用真实实现，并说明实质差异；当前代码与数据本身冲突时先定位来源，不擅自修正实验值以符合标准算例。不要为简洁删掉决定科学含义的连接，也不要补画不存在的设备或机制。
 
 需要查证时优先原论文、作者官方实现和英文一手资料，记录来源与检索日期；只查本图用到的事实，不扩成文献综述。
@@ -39,7 +42,7 @@ description: >-
 
 ### 3. 构建可编辑 PPT
 
-读取 [editable-ppt.md](references/editable-ppt.md)。文字、节点、模块、箭头、连接线、色条和定量标记使用原生对象；插画使用可编辑矢量路径或已检验的 SVG 转形状结果。按组件分组，使用便于选择窗格定位的对象名。
+读取 [editable-ppt.md](references/editable-ppt.md)。文字、节点、模块、箭头、连接线、色条和定量标记使用原生对象；常见结果图优先原生图表并保留可编辑数据；插画使用可编辑矢量路径或已检验的 SVG 转形状结果。按组件分组，使用便于选择窗格定位的对象名。
 
 Python 或 R 负责必要的数据计算与科学绘图；当前环境的 PPT 工具负责原生对象构建。环境中有 Presentations、imagegen 等相关 skill 时按实际需要使用；不为一张图整体更新依赖或另建环境。
 
@@ -55,7 +58,7 @@ Python 或 R 负责必要的数据计算与科学绘图；当前环境的 PPT �
 
 - 少字、大字体。图内只留模块名、关键变量和理解连接所需的短标签；删减文字先于缩小字体。
 - 白底、留白充足、统一无衬线字体。根据参考图和论文实际印刷尺寸确定画布比例，不强制 16:9；没有明确期刊规则时以最终印刷尺寸正文约 7–9 pt 为起点，再检查可读性。
-- 配色简单：中性色与浅色表达现有部分，一个强调色突出本图的关键机制。设备素材统一线宽、视角、细节密度与配色，不拼接不兼容的画风。
+- 配色简单：中性色与浅色表达现有部分，一个强调色突出本图的关键机制。确有多个科学类别时按实际分类编码并给图例，不为减少颜色合并不同类别。设备素材统一线宽、视角、细节密度与配色，不拼接不兼容的画风。
 - 线型承担固定含义；用清楚的箭头区分数据、控制、反馈或参数更新。连接线避开文字，分叉与交叉不能混淆。
 - 图标的外观必须符合设备种类与层级。重复单元可用堆叠、省略号或代表单元表达；图标重复次数不宣称是真实台数或容量。
 - 保留用户指定的模板、标题层级和编号。精细插画服务于科学结构，不用阴影、装饰面板或过度细节抢占阅读路径。
