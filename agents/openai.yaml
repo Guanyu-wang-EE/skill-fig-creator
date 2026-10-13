@@ -1,4 +1,4 @@
 interface:
   display_name: "能源与配网科研绘图"
   short_description: "智能电网、能源优化与配网科研图，优质素材与可编辑PPT流程"
-  default_prompt: "使用 $fig-creator 根据我的论文、参考图和真实数据制作少字大字体、科学关系准确且对象级可编辑的科研图。"
+  default_prompt: "使用 $fig-creator 根据我的论文、参考图和真实数据制作科学关系准确、视觉层级清楚、数学排版规范且对象级可编辑的科研图。"
